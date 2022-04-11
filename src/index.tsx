@@ -8,9 +8,6 @@ import {splitIntoWords} from "./01-hello-test/01";
 const sentence: string = 'Hello my friends!';
 const result = splitIntoWords(sentence);
 
-console.log(result[0] === 'Hello');
-console.log(result[1] === 'my');
-console.log(result[2] === 'friends!');
 
 
 ReactDOM.render(<App/>, document.getElementById('root'));
