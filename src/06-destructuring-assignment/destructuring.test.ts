@@ -1,11 +1,9 @@
-type LessonsType = {
-    lessons: Array<{title: string}>,
-}
+import exp from "constants";
 
 export type ManType = {
     name: string,
     age: number,
-    lessons: LessonsType,
+    lessons: Array<{title: string}>,
     address: {
         street: {
             title: string
@@ -28,7 +26,7 @@ beforeEach(() => {
     }
 })
 
-test('checking destructuring assignments', () => {
+test('checking destructuring assignments of objects', () => {
     // const age = props.age;
     // const lessons = props.lessons;
 
@@ -39,4 +37,17 @@ test('checking destructuring assignments', () => {
     expect(lessons.length).toBe(2)
 
     expect(title).toBe('Prytickaha street')
+})
+
+test('checking destructuring assignments of arrays', () => {
+    const l1 = props.lessons[0];
+    const l2 = props.lessons[1];
+
+    const [ls1, ls2] = props.lessons;
+
+    expect(l1.title).toBe('1');
+    expect(l2.title).toBe('2');
+
+    expect(ls1.title).toBe('1');
+    expect(ls2.title).toBe('2');
 })

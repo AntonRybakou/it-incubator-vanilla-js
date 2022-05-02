@@ -6,13 +6,13 @@ export type ManComponentPropsType = {
     man: ManType,
 }
 
-export const ManComponent: React.FC<ManComponentPropsType> = ({title, man: {name}}) => {
+export const ManComponent: React.FC<ManComponentPropsType> = ({title, man: {name}, ...props}) => {
     return (
         <div>
             <h1>{title}</h1>
             <hr/>
             <div>
-                {man.name}
+                {name}
             </div>
         </div>
     );
